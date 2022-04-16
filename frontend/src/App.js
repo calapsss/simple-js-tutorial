@@ -8,7 +8,7 @@ import GoalList from './components/GoalList';
 import NewGoal from './components/NewGoal';
 
 function App() {
-
+  //reevaluates the components
   const [goals, setGoals] = useState(
     [
       {id: 'cg1', text: 'Finish Course'},
@@ -20,7 +20,7 @@ function App() {
 
 
   const addNewGoalHandler = (newGoal) => {
-    setGoals(goals.concat(newGoal));
+    setGoals((prevGoals)=>{return prevGoals.concat(newGoal);})
     console.log(goals)
 
   }
