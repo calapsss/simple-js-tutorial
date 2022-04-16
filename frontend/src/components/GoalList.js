@@ -1,11 +1,15 @@
 import React from  'react';
 import App from '../App';
 
-function GoalList(){
+function GoalList(props){
+    
     return(
         <ul className="goal-list">
-        <li>Finish Course</li>
-        <li>Learn main tools</li>
+            {
+                props.goals.map((goal)=>{
+                    return <li key = {goal.id}>{goal.text}</li>
+                })
+            }
       </ul>
     );
 }
